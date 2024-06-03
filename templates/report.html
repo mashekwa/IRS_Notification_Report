@@ -1,0 +1,289 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Email Template</title>
+  <style>
+
+    p {
+        color:  #444444;
+    }
+    body {
+      color:  #444444;
+     }
+
+     ul {
+      color:  #444444;
+     }
+    .container {
+        max-width: 800px; /* adjust this to the desired width */
+        margin: 0 auto; /* center the container horizontally */
+        padding: 20px; /* add some padding for spacing */
+        font-family: Tahoma, Verdana, Arial, sans-serif; /* use Arial as the font family */
+      }
+      
+    .doughnut-chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+      
+      .chart-container {
+        height: 200px; /* adjust this to the desired chart height */
+      }
+      
+      .doughnut-chart {
+        width: calc(33.33% - 10px);
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 30px; /* adjust this to the desired spacing */
+        text-align: center;
+      }
+      
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      
+      .value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+      .label {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+  </style>
+</head>
+<body>
+<div class="container">
+    <div style="background-color: #62801E; padding: 20px;">
+        <h1 style="color: white;">{{ subject }}</h1>
+      </div>
+  <p>{{ greeting }},</p>
+  <p></p>
+
+<div style="font-family: Tahoma, Verdana, Arial, sans-serif; margin: 20px 0;">
+    <h2 style="font-size: 24px; font-weight: 400; margin-bottom: 10px; color: #444444;">National</h2>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+        <thead style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Province</th> 
+
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Total Population</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Protected Pop</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Targeted Eligible Structures</th>               
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Eligible Structures</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Spray Coverage</th> 
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, row in data.items() %}
+                <tr style="background-color: {{ '#FFFFFF' if loop.index is even else '#f5fcfc' }};">
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('province', 0) }}</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Population', 0) |int }}</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Targeted Population', 0) |int }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Population Protected', 0) |int  }}</td>
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Targeted Eligible Structures', 0) |int }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Structures Found', 0) |int }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Structures Sprayed', 0) |int }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Structures Not Sprayed', 0) |int }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">{{ row.get('IRS-Total Eligible Structures', 0) |int }}</td>
+                  
+                  {% if row.get('spray_progress') <= 7 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row.get('spray_progress') |int }} %<br /> {{ row.get('IRS-Total Structures Sprayed', 0) |int }}/{{ row.get('IRS-Total Targeted Eligible Structures', 0) }}
+                    </td>
+                  {% elif row.get('spray_progress') >= 14 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                        {{ row.get('spray_progress') |int }} %
+                    </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">
+                        {{ row.get('Average upload days') |int }} %
+                    </td>
+                  {% endif %}
+
+                  {% if row.get('spray_coverage') > 90 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 1px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>                  
+                  {% endif %}
+              </tr>
+          {% endfor %}
+          </tbody>
+    </table>
+</div>
+
+<div style="font-family: Tahoma, Verdana, Arial, sans-serif; margin: 20px 0;">
+    <h2 style="font-size: 24px; font-weight: 400; margin-bottom: 10px; color: #444444;">Eastern Province</h2>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+        <thead style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">BA</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">CPD Lead</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Trial Year</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Average Upload Time (Days)</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Percent Conclusiveness</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Percent Timeliness</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Percent Not Rated</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Percent Delivery (Final)</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Number Delivered (Final)</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Trials late for Final Status</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Percent Delivery (Interim)</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Number Delivered (Interim)</th>
+              <th style="padding: 10px; text-align: left; font-size: 14px; border: 1px solid #ccc;">Trials late for Interim Status</th> 
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in kpi_ba %}
+                <tr style="background-color: {{ '#FFFFFF' if loop.index is even else '#f5fcfc' }};">
+                  <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['BA'] }}</td>
+                  <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['CPD Lead'] }}</td>
+                  <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['Trial Year'] }}</td>
+                  {% if row['Average upload days'] <= 7 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row['Average upload days']|round_off_upload }}{% if 'upload_trend' in row and row.upload_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'upload_trend' in row and row.upload_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Average upload days'] >= 14 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                        {{ row['Average upload days']|round_off_upload }}{% if 'upload_trend' in row and row.upload_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'upload_trend' in row and row.upload_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Average upload days'] < 14 and row['Average upload days'] > 7 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                      {{ row['Average upload days']|round_off_upload }}{% if 'upload_trend' in row and row.upload_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'upload_trend' in row and row.upload_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                      </td>
+                  {% else %}
+                    <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                        {{ row['Average upload days']|round_off_upload }}{% if 'upload_trend' in row and row.upload_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'upload_trend' in row and row.upload_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  
+                  {% endif %}
+                  {% if row['Percent conclusiveness'] > 90 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row['Percent conclusiveness']|to_int }}{% if 'pc_trend' in row and row.pc_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pc_trend' in row and row.pc_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Percent conclusiveness'] <= 70 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                        {{ row['Percent conclusiveness']|to_int }}{% if 'pc_trend' in row and row.pc_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pc_trend' in row and row.pc_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Percent conclusiveness'] > 70 and row['Percent conclusiveness'] <= 90 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                      {{ row['Percent conclusiveness'] }}%{% if 'pc_trend' in row and row.pc_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pc_trend' in row and row.pc_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                      </td>
+                  {% else %}
+                      <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                          {{ row['Percent conclusiveness']|to_int }}
+                      </td>
+                  {% endif %}
+                  {% if row['Percent timeliness'] > 90 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row['Percent timeliness']|to_int }}{% if 'pt_trend' in row and row.pt_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pt_trend' in row and row.pt_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Percent timeliness'] <= 70 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                        {{ row['Percent timeliness']|to_int }}{% if 'pt_trend' in row and row.pt_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pt_trend' in row and row.pt_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                    </td>
+                  {% elif row['Percent timeliness'] > 70 and row['Percent timeliness'] <= 90 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                      {{ row['Percent timeliness'] }}%{% if 'pt_trend' in row and row.pt_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pt_trend' in row and row.pt_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                      </td>
+                  {% else %}
+                      <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                          {{ row['Percent timeliness']|to_int }}
+                      </td>
+                  {% endif %}
+                  {% if row['Percent not rated'] < 20 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                        {{ row['Percent not rated']|to_int }}
+                    </td>
+                  {% elif row['Percent not rated'] >= 50 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                        {{ row['Percent not rated']|to_int }}
+                    </td>
+                  {% elif row['Percent not rated'] >= 20 and row['Percent not rated'] < 50 %}
+                    <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                      {{ row['Percent not rated'] }}%
+                      </td>
+                  {% else %}
+                    <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                        {{ row['Percent not rated']|to_int }}
+                    </td>
+                  {% endif %}
+                  {% if row['Percent delivery Final'] > 90 %}
+                  <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                      {{ row['Percent delivery Final'] }}%{% if 'pd_trend' in row and row.pd_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pd_trend' in row and row.pd_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                  </td>
+                {% elif row['Percent delivery Final'] <= 70 %}
+                  <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                      {{ row['Percent delivery Final'] }}%{% if 'pd_trend' in row and row.pd_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pd_trend' in row and row.pd_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                  </td>
+                {% elif row['Percent delivery Final'] > 70 and row['Percent delivery Final'] <= 90 %}
+                <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                  {{ row['Percent delivery Final'] }}%{% if 'pd_trend' in row and row.pd_trend == "up" %} <span style="color:green">&#9650;</span>{% elif 'pd_trend' in row and row.pd_trend == "down" %} <span style="color:red">&#9660;</span>{% endif %}
+                  </td>
+                {% else %}
+                  <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                      {{ row['Percent delivery Final']|to_int }}
+                  </td>
+    
+                {% endif %}
+                <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['Number delivered Final'] }}</td>
+                <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['Trials late for Final Status'] }}</td>
+                
+                {% if row['Percent delivery Interim'] > 90 %}
+                <td style="padding: 10px; font-size: 14px; background-color: #C6EFCE; border: 1px solid #ccc;">
+                    {{ row['Percent delivery Interim'] }}%
+                </td>
+                {% elif row['Percent delivery Interim'] <= 70 %}
+                  <td style="padding: 10px; font-size: 14px; background-color: #F8CECC; border: 1px solid #ccc;">
+                      {{ row['Percent delivery Interim'] }}%
+                  </td>
+                {% elif row['Percent delivery Interim'] > 70 and row['Percent delivery Interim'] <= 90 %}
+                <td style="padding: 10px; font-size: 14px; background-color: #FFF2CC; border: 1px solid #ccc;">
+                  {{ row['Percent delivery Interim'] }}%
+                  </td>
+                {% else %}
+                  <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">
+                      {{ row['Percent delivery Interim']|to_int }}
+                  </td>
+    
+                {% endif %}
+                <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['Number delivered Interim'] }}</td>
+                <td style="padding: 10px; font-size: 14px; border: 1px solid #ccc;">{{ row['Trials late for Interim Status'] }}</td>
+              </tr>
+          {% endfor %}
+          </tbody>
+    </table>
+</div>
+
+<div style="font-family: Tahoma, Verdana, Arial, sans-serif; margin-top: 20px;">
+    <p style="font-size: 14px;">For more details, please visit the <a href="https://dhis.co.zm/dhis" target="blank" style="color: #0066cc;">NMEC MRR System</a>.</p>
+    <p style="font-size: 14px;">Kind Regards,</p>
+    <p style="font-size: 14px;">{{ sender_name }}</p>
+    <p style="font-size: 12px; color: #666;">Please do not reply to this message. Replies to this message are routed to an unmonitored mailbox.</p>
+  </div>
+  </div>
+  
+  </body>
+  </html>
