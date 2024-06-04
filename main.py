@@ -12,8 +12,18 @@ from dotenv import load_dotenv, dotenv_values
 import os
 from utils.load_to_db import load_data
 import sqlite3
+import logging
 
 load_dotenv()
+
+# Create and configure logger
+logging.basicConfig(filename="logs.log",
+                    format='%(asctime)s %(message)s',
+                    filemode='w')
+
+
+# Creating an object
+logger = logging.getLogger()
 
 db_name = os.getenv("DB_NAME")
 user = os.getenv("DHIS2_USER")
@@ -72,4 +82,4 @@ pull_microplan_irs_data()
 print("### Test 2")
 process_data_irs()
 print("### Test 3")
-# run_aggregation()
+run_aggregation()
