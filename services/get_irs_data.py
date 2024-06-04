@@ -21,9 +21,6 @@ params = {
     'fields': 'storedBy,event,eventDate,created,lastUpdated,programStage,orgUnit,deleted,dataValues[dataElement,value]'
 }
 
-# Load data Elements from DB
-irs_de_tbl = 'irs_de_tbl'
-elements_df = read_data(irs_de_tbl)
 
 def get_irs_data(api):
     try:
@@ -36,7 +33,7 @@ def get_irs_data(api):
         print(f"Error occurred while pulling data: {str(e)}")
         return [], "fail"
     
-def events_to_df(events):
+def events_to_df(events, elements_df):
     # Your existing code
     events_df = pd.json_normalize(events, 'dataValues', ['event','eventDate','created','lastUpdated','programStage','orgUnit','deleted'])
 
@@ -50,7 +47,7 @@ def events_to_df(events):
                                      columns='dataElement', values='value', aggfunc='first')
 
     # Reset the index
-    pivot_df.reset_index(inplace=True)
+    pivot_df.reset_index(inplace=True)    
 
     # Create a dictionary mapping ids to names
     id_to_name = dict(zip(elements_df['id'], elements_df['name']))
@@ -71,12 +68,16 @@ def events_to_df(events):
 
 
 def pull_irs_data(api):
+    # Load data Elements from DB
+    irs_de_tbl = 'irs_de_tbl'
+    elements_df = read_data(irs_de_tbl)
+
     events, status = get_irs_data(api)
 
     if status == "success":
         if len(events) != 0:
             try:
-                df = events_to_df(events)
+                df = events_to_df(events, elements_df)
                 if df.empty:
                     print("IRS data pull returned empty values")
                 else:
