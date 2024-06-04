@@ -4,9 +4,10 @@ from dhis2 import Api, RequestException
 from services.get_org_units import pull_orgs
 from services.get_irs_de import pull_irs_de
 from services.get_microplan_de import  pull_microplan_de
-# from services.get_irs_data import pull_irs_data
-# from services.get_microplan_data import pull_microplan_data
+from services.get_irs_data import pull_irs_data
+from services.get_microplan_data import pull_microplan_data
 from services.irs_data_process import process_data_irs
+from services.data_process import run_aggregation
 from dotenv import load_dotenv, dotenv_values
 import os
 from utils.load_to_db import load_data
@@ -48,23 +49,27 @@ def ensure_table_exists():
     conn.close()
 
 # Pull Data, Monday, Wednesday, Saturday.
-# def pull_microplan_irs_data():
-#     ensure_table_exists()
-#     pull_irs_data(api)
-#     pull_microplan_data(api)
+def pull_microplan_irs_data():
+    ensure_table_exists()
+    pull_irs_data(api)
+    pull_microplan_data(api)
 
 def data_processing():
     process_data_irs()
 
-def generate_report():
-    pass
+# def generate_report():
+#     pass
 
-def send_report():
-    pass
+# def send_report():
+#     pass
 
 print("Running Initial scripts")
 initialize()
 
 # Pull Data, Monday, Wednesday, Saturday.
-# pull_microplan_irs_data()
-data_processing()
+print("### Test")
+pull_microplan_irs_data()
+print("### Test 2")
+process_data_irs()
+print("### Test 3")
+# run_aggregation()

@@ -56,7 +56,6 @@ def events_to_df(events):
     # Create a dictionary mapping ids to names
     id_to_name = dict(zip(elements_df['id'], elements_df['name']))
 
-    pivot_df.reset_index(drop=True)
     # Rename columns of events_df using the dictionary
     pivot_df.rename(columns=id_to_name, inplace=True)
 
@@ -96,8 +95,6 @@ def pull_microplan_data(api):
         if df.empty:
             print("IRS Microplan data pull returned empty values")
         else:
-            df['eventDate'] = pd.to_datetime(df['eventDate'])
-            df.sort_values(by='eventDate', inplace = True)
             load_data("microplan_data_tbl", df)
 
 
