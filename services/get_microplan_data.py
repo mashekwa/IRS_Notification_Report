@@ -20,7 +20,6 @@ params={
     'ouMode':'DESCENDANTS',
     'program':program, 
     'startDate':start_date,
-    'endDate':end_date,
     'fields':'storedBy,event,eventDate,created,lastUpdated,programStage,orgUnit,deleted,dataValues[dataElement,value]'
     }
 

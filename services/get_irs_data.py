@@ -16,8 +16,7 @@ params = {
     'orgUnit': ou,
     'ouMode': 'DESCENDANTS',
     'program': program,
-    'startDate': start_date,
-    'endDate': end_date,
+    'startDate': '2023-09-01',
     'fields': 'storedBy,event,eventDate,created,lastUpdated,programStage,orgUnit,deleted,dataValues[dataElement,value]'
 }
 

@@ -7,6 +7,7 @@ from services import get_microplan_de
 from services import get_irs_data
 from services import get_microplan_data
 from services import irs_data_process
+# from services import generate_report
 from services.data_aggregator import run_aggregation
 from dotenv import load_dotenv, dotenv_values
 import os
@@ -23,6 +24,8 @@ logging.basicConfig(filename="logs.log",
 
 # Creating an object
 logger = logging.getLogger()
+
+con = sqlite3.connect("db/irs.db")
 
 db_name = os.getenv("DB_NAME")
 user = os.getenv("DHIS2_USER")
@@ -59,6 +62,7 @@ def data_processing():
 
 pull_microplan_irs_data()
 data_processing()
+# generate_report.make_report(con)
 
 # # Schedule tasks
 # scheduler.every().sunday.at("01:00").do(pull_microplan_irs_data)
