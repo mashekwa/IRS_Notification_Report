@@ -1,0 +1,1924 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Email Template</title>
+  <style>
+
+    p {
+        color:  #444444;
+    }
+    body {
+      color:  #444444;
+     }
+
+     ul {
+      color:  #444444;
+     }
+    .container {
+        max-width: 1000px; /* adjust this to the desired width */
+        margin: 0 auto; /* center the container horizontally */
+        padding: 10px; /* add some padding for spacing */
+        font-family: Tahoma, Verdana, Arial, sans-serif; /* use Arial as the font family */
+      }
+      
+    .doughnut-chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+      
+      .chart-container {
+        height: 200px; /* adjust this to the desired chart height */
+      }
+      
+      .doughnut-chart {
+        width: calc(33.33% - 10px);
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 30px; /* adjust this to the desired spacing */
+        text-align: center;
+      }
+      
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      
+      .value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+      .label {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+      }
+      .color-key {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .color-key div {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+    .color-box {
+        width: 40px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .color-box.highest { background-color: #12ae00; border: 1px solid #ccc;}
+    .color-box.high { background-color: #49e048; border: 1px solid #ccc;}
+    .color-box.medium { background-color: #FFAC1C; border: 1px solid #ccc;}
+    .color-box.low { background-color: #d20303; border: 1px solid #ccc; }
+    
+
+    .column {
+      float: left;
+      margin-right: 50px;
+    }
+    
+    /* Clear floats after image containers */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div style="background-color: #62801E; padding: 20px;">
+    <h1 style="color: white;">2024 IRS PROGRESS UPDATE</h1>
+    <p style="color: white;">Last sync: | Data Source: <a href="https://dhis.co.zm/dhis/">MRRS DHIS2</a> </p>
+  </div>
+` <p></p>
+
+
+  <div>
+    <h2>National</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Province</th> 
+
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Catchment Population</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Population</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>    
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>               
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th> 
+            </tr>
+          </thead>
+          <tbody>
+            
+                <tr style="background-color: #f5fcfc;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Copperbelt</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">642,295</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">601,321</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">474,868</td>
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          79 %
+                      </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">100,844</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">111,102</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">97,926</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">13,282</td>
+                  
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        88 %
+                    </td>
+                  
+              </tr>
+          
+                <tr style="background-color: #FFFFFF;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Eastern</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,138,763</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,130,761</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,369,888</td>
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        121 %<br />
+                    </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">270,120</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">353,580</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">350,261</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,319</td>
+                  
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        130 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+              </tr>
+          
+                <tr style="background-color: #f5fcfc;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Luapula</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">886,951</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">853,103</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,283,560</td>
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        150 %<br />
+                    </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">174,638</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">205,120</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">199,174</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,069</td>
+                  
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        114 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+              </tr>
+          
+                <tr style="background-color: #FFFFFF;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Lusaka</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">159,072</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">150,883</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">42,062</td>
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          28 %
+                      </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,515</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,293</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,379</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">963</td>
+                  
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          37 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        93 %
+                    </td>
+                  
+              </tr>
+          
+                <tr style="background-color: #f5fcfc;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Northwestern</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">341,080</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">341,777</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">159,576</td>
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          47 %
+                      </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">54,438</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">39,488</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">35,108</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2,755</td>
+                  
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          64 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        89 %
+                    </td>
+                  
+              </tr>
+          
+                <tr style="background-color: #FFFFFF;">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Southern</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">353,440</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">241,913</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">156,800</td>
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          65 %
+                      </td>
+                  
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">73,345</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">49,107</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">47,665</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,107</td>
+                  
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          65 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+              </tr>
+          
+          </tbody>
+    </table>    
+</div>
+<br /><br /><br />
+<h3>Key Information:</h3>
+<p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+<p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+
+<div>
+    <h2>Copperbelt Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">642,295</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">601,321</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">474,868</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">78 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">100,844</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">100,844</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">111,102</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">97,926</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">13,282</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">97 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">88 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chililabombwe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">82,688</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">80,771</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">86,630</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        107 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">14,637</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,721</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">15,902</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,846</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        109 %
+                    </td>
+                  
+
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          81 %
+                      </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chingola</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">282,726</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">243,669</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">188,012</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          77 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">39,924</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">44,012</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">35,575</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">8,460</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        89 %
+                    </td>
+                  
+
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          81 %
+                      </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Kalulushi</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,014</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,272</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,136</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">136</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Lufwanyama</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">125,882</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">125,882</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">89,614</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          71 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">24,407</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">22,421</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">22,108</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">360</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        91 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Masaiti</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">52,061</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">52,061</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">14,325</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          28 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">8,888</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,364</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,257</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">108</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          37 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mpongwe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">98,938</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">98,938</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">77,273</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          78 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,988</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">17,312</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">16,948</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">372</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        130 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        98 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+<div>
+    <h2>Eastern Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,138,763</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,130,761</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,369,888</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">121 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">270,120</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">270,120</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">353,580</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">350,261</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,319</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">129 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">99 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chadiza</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">109,911</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">109,910</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">119,911</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        109 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">27,273</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">31,316</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">31,180</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">136</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        114 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chipangali</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">154,319</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">146,318</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">258,611</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        177 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">53,767</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">60,925</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">59,891</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,034</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        111 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        98 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chipata</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">251,249</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">251,249</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">240,601</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        96 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">46,463</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">58,392</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">57,907</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">485</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        125 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Kasenengwa</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">15,763</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">15,763</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">148,419</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        942 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,627</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">36,698</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">36,353</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">345</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        1002 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Katete</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">8</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Lusangazi</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">116,421</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">116,421</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">102,561</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        88 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">22,100</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">26,618</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">26,485</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">133</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        120 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mambwe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">117,434</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">117,434</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">125,887</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        107 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">25,867</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,826</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,594</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">232</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        118 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Nyimba</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">90,273</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">90,273</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">102,289</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        113 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">27,488</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">31,713</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">31,486</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">227</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        115 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Petauke</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">222,806</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">222,806</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">206,304</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        93 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">50,142</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">60,330</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">59,790</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">540</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        119 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Vubwi</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">60,587</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">60,587</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">65,297</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        108 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">13,393</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">16,760</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">16,573</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">187</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        124 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+<div>
+    <h2>Luapula Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">886,951</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">853,103</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,283,560</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">150 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">174,638</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">174,638</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">205,120</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">199,174</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,069</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">114 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">97 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chembe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,450</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,450</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,293</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          64 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,500</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,777</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,697</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">34</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        113 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        95 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chienge</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">172,806</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">172,806</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">292,792</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        169 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">46,980</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">49,831</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">49,755</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">76</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        106 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chifunabuli</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">43,170</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">43,170</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,277</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          45 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">8,622</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,282</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,211</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">173</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          49 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        98 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Chipili</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">25,573</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">17,904</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">21,704</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        121 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2,950</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,156</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,106</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">49</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        139 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Kawambwa</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">96,611</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">96,611</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">149,883</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        155 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">27,003</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">27,003</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">26,935</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">68</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mansa</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">58,837</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">51,636</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">34,008</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          66 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,948</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">8,755</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,991</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,803</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        88 %
+                    </td>
+                  
+
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          80 %
+                      </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Milenge</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">48,519</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">39,178</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">33,818</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        86 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,310</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,304</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,241</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">63</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mwansabombwe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">82,798</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">82,055</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">62,605</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          76 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">10,721</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,498</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">10,662</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,840</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        85 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mwense</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">122,361</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">21,414</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">20,848</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">591</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Nchelenge</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">218,942</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">218,942</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">424,892</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        194 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">41,369</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">48,010</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">47,573</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">437</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        115 %<br />
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Samfya</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">128,245</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">119,351</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">114,927</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        96 %
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">20,235</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">20,090</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,155</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">935</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        95 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        95 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+<div>
+    <h2>Lusaka Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">159,072</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">150,883</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">42,062</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">27 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,515</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,515</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,293</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,379</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">963</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">37 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">92 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Lusaka</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">159,072</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">150,883</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">42,062</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          28 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">30,515</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,293</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,379</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">963</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          37 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        93 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+<div>
+    <h2>Northwestern Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">341,080</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">341,777</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">159,576</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">46 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">54,438</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">54,438</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">39,488</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">35,108</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2,755</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">64 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">88 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Ikelenge</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">44,266</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">44,264</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">20,986</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          47 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,566</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,699</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">5,802</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,979</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          77 %
+                      </td>
+                  
+
+                  
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          75 %
+                      </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Kalumbila</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">5,402</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,487</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1,288</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">199</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        87 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Mushindano</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">61,038</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">61,735</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">18,013</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          29 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,099</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,546</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,530</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          64 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Solwezi</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">235,776</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">235,778</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">89,382</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          38 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">39,773</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,092</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">17,215</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">340</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          43 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        90 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Zambezi</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">25,793</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,664</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,273</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">225</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        94 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+<div>
+    <h2>Southern Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">353,440</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">241,913</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">156,800</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">64 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">73,345</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">73,345</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">49,107</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">47,665</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">3,107</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">64 %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">97 %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Gwembe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">81,367</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">81,362</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">15,781</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          19 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">14,980</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,585</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,531</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">54</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          30 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Monze</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">37,614</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">17,195</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">18,987</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        110 %<br />
+                    </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">6,500</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,049</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">4,021</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">28</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          62 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        99 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Namwala</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">33,319</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">33,319</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">19,821</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          59 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">9,000</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,998</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">7,997</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">1</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        89 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Siavonga</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">44,008</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          0 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">9,867</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">11,661</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">10,698</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">923</td>
+                
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        108 %
+                    </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        92 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #f5fcfc;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Sinazongwe</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">84,384</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">46,037</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">17,444</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          38 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">12,998</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">9,943</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">9,595</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">2,053</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          74 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        97 %
+                    </td>
+                  
+            </tr>
+            
+            <tr style="background-color: #FFFFFF;">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">Zimba</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">116,756</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">64,000</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">40,759</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          64 %
+                      </td>
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">0</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">20,000</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">10,871</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">10,823</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">48</td>
+                
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          54 %
+                      </td>
+                  
+
+                  
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        100 %
+                    </td>
+                  
+            </tr>
+            
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+
+
+  </div>
+  
+  </body>
+  </html>

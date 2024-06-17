@@ -9,11 +9,8 @@ import os
 
 load_dotenv()
 
-# Load data Elements from data file
-microplan_de_tbl = 'microplan_de_tbl'
-elements_df = read_data(microplan_de_tbl)
-
-start_date = os.getenv("CAMPAIGN_START_DATE")
+# start_date = os.getenv("CAMPAIGN_START_DATE")
+start_date = '2023-09-01'
 end_date = os.getenv("CAMPAIGN_END_DATE")
 ou = os.getenv("COUNTRY_ID") # Country Org Unit ID from DHIS2
 program = os.getenv("IRS_MICROPLAN_PROGRAM_ID")
@@ -23,7 +20,6 @@ params={
     'ouMode':'DESCENDANTS',
     'program':program, 
     'startDate':start_date,
-    'endDate':end_date,
     'fields':'storedBy,event,eventDate,created,lastUpdated,programStage,orgUnit,deleted,dataValues[dataElement,value]'
     }
 
@@ -36,7 +32,7 @@ def get_microplan_data(api):
     return events
 
 
-def events_to_df(events):
+def events_to_df(events, elements_df):
     # Creating a DataFrame
     microplan_df = pd.json_normalize(events, 'dataValues', ['event','eventDate','created','lastUpdated','programStage','orgUnit','deleted'])
 
@@ -56,7 +52,6 @@ def events_to_df(events):
     # Create a dictionary mapping ids to names
     id_to_name = dict(zip(elements_df['id'], elements_df['name']))
 
-    pivot_df.reset_index(drop=True)
     # Rename columns of events_df using the dictionary
     pivot_df.rename(columns=id_to_name, inplace=True)
 
@@ -88,16 +83,18 @@ def events_to_df(events):
     return final_df
 
 def pull_microplan_data(api):
+    # Load data Elements from data file
+    microplan_de_tbl = 'microplan_de_tbl'
+    elements_df = read_data(microplan_de_tbl)
+
     events = get_microplan_data(api)
 
     if len(events) != 0:
-        df = events_to_df(events)
+        df = events_to_df(events, elements_df)
 
         if df.empty:
             print("IRS Microplan data pull returned empty values")
         else:
-            df['eventDate'] = pd.to_datetime(df['eventDate'])
-            df.sort_values(by='eventDate', inplace = True)
             load_data("microplan_data_tbl", df)
 
 

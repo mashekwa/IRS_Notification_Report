@@ -1,18 +1,31 @@
 import schedule
 import time
 from dhis2 import Api, RequestException
-from services.get_org_units import pull_orgs
-from services.get_irs_de import pull_irs_de
-from services.get_microplan_de import  pull_microplan_de
-# from services.get_irs_data import pull_irs_data
-# from services.get_microplan_data import pull_microplan_data
-from services.irs_data_process import process_data_irs
+from services import get_org_units
+from services import get_irs_de
+from services import get_microplan_de
+from services import get_irs_data
+from services import get_microplan_data
+from services import irs_data_process
+# from services import generate_report
+from services.data_aggregator import run_aggregation
 from dotenv import load_dotenv, dotenv_values
 import os
 from utils.load_to_db import load_data
 import sqlite3
+import logging
 
 load_dotenv()
+
+# Create and configure logger
+logging.basicConfig(filename="logs.log",
+                    format='%(asctime)s %(message)s',
+                    filemode='w')
+
+# Creating an object
+logger = logging.getLogger()
+
+con = sqlite3.connect("db/irs.db")
 
 db_name = os.getenv("DB_NAME")
 user = os.getenv("DHIS2_USER")
@@ -22,49 +35,48 @@ api = Api('https://dhis.co.zm/dhis', user, password)
 
 def initialize():
     # Pull Org Units from MRRS, Run every week in case of new orgs beeing added.
-    pull_orgs(api)
+    get_org_units.pull_orgs(api)
 
-    # # Pull IRS program data elements and load into DB
-    pull_irs_de(api)
+    # Pull IRS program data elements and load into DB
+    get_irs_de.pull_irs_de(api)
 
-    # # Pull Microplan Program Data Elements
-    pull_microplan_de(api)
+    # Pull Microplan Program Data Elements
+    get_microplan_de.pull_microplan_de(api)
 
+    return schedule.CancelJob
 
-# Check if irs_de_tbl exists before pulling data
-def ensure_table_exists():
-    try:
-        with sqlite3.connect(f"db/{db_name}") as conn:
-            cur = conn.cursor()
-            res = cur.execute("SELECT name FROM sqlite_master")
-            if res.fetchone() is None:
-                print("Table irs_de_tbl does not exist. Running initialize() to create the table.")
-                initialize()
-    except sqlite3.Error as e:
-        print("Something went wrong...!!!")
-        print()
-        print(e)  
+# Create a new scheduler
+scheduler = schedule.Scheduler()
 
-    conn.close()
-
-# Pull Data, Monday, Wednesday, Saturday.
-# def pull_microplan_irs_data():
-#     ensure_table_exists()
-#     pull_irs_data(api)
-#     pull_microplan_data(api)
-
-def data_processing():
-    process_data_irs()
-
-def generate_report():
-    pass
-
-def send_report():
-    pass
-
-print("Running Initial scripts")
+# Schedule the initialize function to run once at runtime
 initialize()
 
-# Pull Data, Monday, Wednesday, Saturday.
-# pull_microplan_irs_data()
+def pull_microplan_irs_data():
+    get_irs_data.pull_irs_data(api)
+    get_microplan_data.pull_microplan_data(api)
+
+def data_processing():
+    irs_data_process.process_data_irs()
+    run_aggregation()
+
+
+pull_microplan_irs_data()
 data_processing()
+# generate_report.make_report(con)
+
+# # Schedule tasks
+# scheduler.every().sunday.at("01:00").do(pull_microplan_irs_data)
+# scheduler.every().wednesday.at("01:00").do(pull_microplan_irs_data)
+# scheduler.every().sunday.at("02:45").do(process_data_irs)
+# scheduler.every().wednesday.at("02:45").do(process_data_irs)
+# scheduler.every().sunday.at("04:00").do(run_aggregation)
+# scheduler.every().wednesday.at("04:00").do(run_aggregation)
+
+# def run_scheduler():
+#     while True:
+#         scheduler.run_pending()
+#         time.sleep(1)
+
+# # Start the scheduler
+# if __name__ == "__main__":
+#     run_scheduler()

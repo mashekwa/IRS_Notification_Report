@@ -1,0 +1,396 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Email Template</title>
+  <style>
+
+    p {
+        color:  #444444;
+    }
+    body {
+      color:  #444444;
+     }
+
+     ul {
+      color:  #444444;
+     }
+    .container {
+        max-width: 1000px; /* adjust this to the desired width */
+        margin: 0 auto; /* center the container horizontally */
+        padding: 10px; /* add some padding for spacing */
+        font-family: Tahoma, Verdana, Arial, sans-serif; /* use Arial as the font family */
+      }
+      
+    .doughnut-chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+      
+      .chart-container {
+        height: 200px; /* adjust this to the desired chart height */
+      }
+      
+      .doughnut-chart {
+        width: calc(33.33% - 10px);
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 30px; /* adjust this to the desired spacing */
+        text-align: center;
+      }
+      
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      
+      .value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+      .label {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #444444;
+      }
+      
+      }
+      .color-key {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .color-key div {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+    .color-box {
+        width: 40px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .color-box.highest { background-color: #12ae00; border: 1px solid #ccc;}
+    .color-box.high { background-color: #49e048; border: 1px solid #ccc;}
+    .color-box.medium { background-color: #FFAC1C; border: 1px solid #ccc;}
+    .color-box.low { background-color: #d20303; border: 1px solid #ccc; }
+    
+
+    .column {
+      float: left;
+      margin-right: 50px;
+    }
+    
+    /* Clear floats after image containers */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div style="background-color: #62801E; padding: 20px;">
+    <h1 style="color: white;">{{ subject }}</h1>
+    <p style="color: white;">Last sync: | Data Source: <a href="https://dhis.co.zm/dhis/">MRRS DHIS2</a> </p>
+  </div>
+` <p></p>
+
+
+  <div>
+    <h2>National</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Province</th> 
+
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Catchment Population</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Population</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>    
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>               
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th> 
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, row in data.items() %}
+                <tr style="background-color: {{ '#FFFFFF' if loop.index is even else '#f5fcfc' }};">
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('province', 0) }}</td>   
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Population', 0) |int | format_with_commas }}</td>               
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Targeted Population', 0) |int | format_with_commas }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Population Protected', 0) |int  | format_with_commas }}</td>
+                  {% if row.get('pop_protected_perc') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int }} %<br />
+                    </td>
+                  {% elif row.get('pop_protected_perc') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int }} %
+                    </td>
+                  {% elif row.get('pop_protected_perc') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('pop_protected_perc') |int }} %
+                      </td>
+                  {% elif row.get('pop_protected_perc') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('pop_protected_perc') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int }} %
+                    </td>
+                  {% endif %}
+
+                  
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Eligible Structures', 0) |int | format_with_commas }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Targeted Eligible Structures', 0) |int | format_with_commas }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Found', 0) |int | format_with_commas }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Sprayed', 0) |int | format_with_commas }}</td>
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Not Sprayed', 0) |int | format_with_commas }}</td>
+                  
+                  {% if row.get('spray_progress') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_progress') |int }} %<br />
+                    </td>
+                  {% elif row.get('spray_progress') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_progress') |int }} %
+                    </td>
+                  {% elif row.get('spray_progress') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_progress') |int }} %
+                      </td>
+                  {% elif row.get('spray_progress') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_progress') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_progress') |int }} %
+                    </td>
+                  {% endif %}
+
+                  {% if row.get('spray_coverage') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %<br />
+                    </td>
+                  {% elif row.get('spray_coverage') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>
+                  {% elif row.get('spray_coverage') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_coverage') |int }} %
+                      </td>
+                  {% elif row.get('spray_coverage') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_coverage') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>
+                  {% endif %}
+              </tr>
+          {% endfor %}
+          </tbody>
+    </table>    
+</div>
+<br /><br /><br />
+<h3>Key Information:</h3>
+<p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+<p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+
+{% for province, districts in provincial_data.items() %}
+<div>
+    <h2>{{ province }} Province</h2>
+    <div class="row">
+      <div class="column">
+        <div class="color-box highest"></div> <p> Exceeds target (110% +)</p>
+      </div>
+      <div class="column">
+        <div class="color-box high"></div> <p>High (85% - 110%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box medium"></div><p>Mid (50% - 85%)</p>
+      </div>
+      <div class="column">
+        <div class="color-box low"></div><p> Low (< 50 %)</p>
+      </div>
+    </div>
+
+     <!-- Aggregated Table -->
+     <table style="margin-top: 20px; margin-bottom: 20px; width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+      <thead  style="background-color: #f2f2f2; color: #444444;">
+          <tr>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th>  
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+              <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Population') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Targeted Population') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Population Protected') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ (districts | sum(attribute='IRS-Total Population Protected') / districts | sum(attribute='IRS-Total Targeted Population') * 100) |int | round() if districts | sum(attribute='IRS-Total Targeted Population') else 0 }} %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Targeted Eligible Structures') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Targeted Eligible Structures') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Structures Found') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Structures Sprayed') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ districts | sum(attribute='IRS-Total Structures Not Sprayed') | int | format_with_commas }}</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ (districts | sum(attribute='IRS-Total Structures Sprayed') / districts | sum(attribute='IRS-Total Targeted Eligible Structures') * 100) |int | round() if districts | sum(attribute='IRS-Total Targeted Eligible Structures') else 0 }} %</td>
+              <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ (districts | sum(attribute='IRS-Total Structures Sprayed') / districts | sum(attribute='IRS-Total Structures Found') * 100) |int | round(0) if districts | sum(attribute='IRS-Total Structures Found') else 0 }} %</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+    <table  style="width: 100%; border-collapse: collapse; border: 0.5px solid #ccc;">
+        <thead  style="background-color: #f2f2f2; color: #444444;">
+            <tr>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">District</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Protected Pop</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Percentage Population Protected</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Total Structures</th> 
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Targeted Eligible Structures</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Found</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Structures Sprayed</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Refusals</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Progress</th>
+                <th style="padding: 8px; text-align: left; font-size: 14px; border: 0.5px solid #ccc;">Spray Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in districts %}
+            <tr style="background-color: {{ '#FFFFFF' if loop.index is even else '#f5fcfc' }};">
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('district', 0) }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Population', 0) | int | format_with_commas  }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Targeted Population', 0) | int| format_with_commas }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Population Protected', 0) | int | format_with_commas  }}</td>
+                {% if row.get('pop_protected_perc') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int  }} %<br />
+                    </td>
+                  {% elif row.get('pop_protected_perc') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int  }} %
+                    </td>
+                  {% elif row.get('pop_protected_perc') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('pop_protected_perc') |int  }} %
+                      </td>
+                  {% elif row.get('pop_protected_perc') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('pop_protected_perc') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('pop_protected_perc') |int}} %
+                    </td>
+                  {% endif %}
+                  <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Eligible Structures', 0) | int | format_with_commas  }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Targeted Eligible Structures', 0) | int | format_with_commas  }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Found', 0) | int| format_with_commas  }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Sprayed', 0) | int| format_with_commas }}</td>
+                <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">{{ row.get('IRS-Total Structures Not Sprayed', 0) | int | format_with_commas }}</td>
+                {% if row.get('spray_progress') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_progress') |int  }} %<br />
+                    </td>
+                  {% elif row.get('spray_progress') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_progress') |int  }} %
+                    </td>
+                  {% elif row.get('spray_progress') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_progress') |int  }} %
+                      </td>
+                  {% elif row.get('spray_progress') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_progress') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('Average upload days') |int}} %
+                    </td>
+                  {% endif %}
+
+                  {% if row.get('spray_coverage') >= 110 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #12ae00; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %<br />
+                    </td>
+                  {% elif row.get('spray_coverage') >= 85 %}
+                    <td style="padding: 8px; font-size: 14px; background-color: #49e048; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>
+                  {% elif row.get('spray_coverage') >= 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #FFAC1C; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_coverage') |int }} %
+                      </td>
+                  {% elif row.get('spray_coverage') < 50 %}
+                      <td style="padding: 8px; font-size: 14px; background-color: #d20303; border: 0.5px solid #ccc;">
+                          {{ row.get('spray_coverage') |int }} %
+                      </td>
+                  {% else %}
+                    <td style="padding: 8px; font-size: 14px; border: 0.5px solid #ccc;">
+                        {{ row.get('spray_coverage') |int }} %
+                    </td>
+                  {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>  
+    <br /><br /><br />
+    <h3>Key Information:</h3>
+    <p><b>Spray Progress:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Targeted Eligible Structures</b>.</p>
+    <p><b>Spray Coverage:</b><br /> Calculated as the Percentage of <b>Structures Sprayed</b> / <b>Structures Found </b>.</p>
+    
+</div>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+{% endfor %}
+
+
+  </div>
+  
+  </body>
+  </html>
